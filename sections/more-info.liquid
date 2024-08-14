@@ -1,0 +1,89 @@
+<section class="more-info">
+  <div class="more-info-wrapper">
+    {% if section.settings.text == blank %}
+      <h1>THE RESOLUTION STARTER PACK</h1>
+    {% else %}
+      <h1>{{ section.settings.text1 }}</h1>
+    {% endif %}
+
+    {% if section.settings.text2 == blank %}
+      <p>Go for all your fitness goals with a curated collection of new kicks breathable apperal and more supportive styles</p>
+    {% else %}
+      <p>{{ section.settings.text2 }}</p>
+    {% endif %}
+
+    <button>Shop</button>
+  </div>
+</section>
+
+<style>
+  .more-info {
+    background: {{ section.settings.background }};
+    color: {{ section.settings.text-color }};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .more-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+  }
+
+  .more-info-wrapper h1 {
+    font-size: 50px;
+  }
+
+  .more-info-wrapper button {
+    padding: 20px 40px 20px 40px;
+    font-size: 20px;
+    background-color:black;
+    border: none;
+    color: white;
+    border-radius: 17px;
+    cursor: pointer;
+  }
+
+  .more-info-wrapper button:hover {
+    background-color: rgb(185, 185, 185);
+    color: black;
+    transition: .3s;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "more-info",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background",
+        "default": "#F4F4F4"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text",
+        "info": "#F4F4F4"
+      }, {
+        "type": "text",
+        "id": "text",
+        "label": "Text1",
+        "default": "default text"
+      }, {
+        "type": "text",
+        "id": "text2",
+        "label": "Text2",
+        "default": "default text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "more-info"
+      }
+    ]
+  }
+{% endschema %}

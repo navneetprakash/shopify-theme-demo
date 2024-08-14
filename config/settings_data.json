@@ -1,0 +1,15 @@
+{
+  "current": {
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "show-announcement": true
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}
